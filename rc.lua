@@ -230,7 +230,7 @@ awful.util.mymainmenu = freedesktop.menu.build {
 -- }}}
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
--- {{{ Wibar
+-- {{{ Wibar (set by the theme)
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
 -- Keyboard map indicator and switcher

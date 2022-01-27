@@ -23,16 +23,16 @@ theme.taglist_font                              = "Ubuntu Mono 14"
 theme.fg_normal                                 = "#ffffff"
 theme.fg_focus                                  = "#ffffff"
 theme.bg_focus                                  = "#0099CC" --"#1a1a1a"
-theme.bg_normal                                 = "#a0a0a0" --"#1a1a1a"
+theme.bg_normal                                 = "#1a1a1a"
 theme.fg_urgent                                 = "#CC9393"
 theme.bg_urgent                                 = "#006B8E"
 theme.border_width                              = dpi(2)
 theme.border_normal                             = "#252525"
 theme.border_focus                              = "#0099CC"
-theme.box_color                                 = "#000000" --"#0099CC"
-theme.taglist_fg_focus                          = "#FFFFFF"
-theme.tasklist_bg_normal                        = "#222222"
-theme.tasklist_fg_focus                         = "#4CB7DB"
+theme.box_color                                 = "#303030" --"#0099CC"
+theme.taglist_fg_focus                          = "#ffffff"
+theme.tasklist_bg_normal                        = "#1a1a1a"
+theme.tasklist_fg_focus                         = "#ffffff" --"#4CB7DB"
 theme.menu_height                               = dpi(20)
 theme.menu_width                                = dpi(160)
 theme.menu_icon_size                            = dpi(32)
@@ -244,7 +244,7 @@ local cpu = lain.widget.cpu({
         widget:set_markup(space4 .. markup.font(theme.font, "CPU " .. cpu_now.usage .. "%") .. space4)
     end
 })
-local cpubg = wibox.container.background(cpu.widget, theme.bg_focus, gears.shape.rectangle)
+local cpubg = wibox.container.background(cpu.widget, theme.box_color, gears.shape.rectangle)
 local cpuwidget = wibox.container.margin(cpubg, dpi(0), dpi(0), dpi(5), dpi(5))
 
 -- Net
@@ -321,7 +321,7 @@ function theme.at_screen_connect(s)
     s.mytag = wibox.container.margin(mytaglistcont, dpi(5), dpi(5), dpi(5), dpi(5))
 
     -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons, { bg_focus = theme.bg_focus, shape = gears.shape.rectangle, shape_border_width = 5, shape_border_color = theme.tasklist_bg_normal, align = "center" })
+    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons, { bg_focus = theme.box_color, shape = gears.shape.rectangle, shape_border_width = 5, shape_border_color = theme.tasklist_bg_normal, align = "center" })
 
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(32) })
@@ -335,7 +335,7 @@ function theme.at_screen_connect(s)
             s.mytag,
             -- spr_small,
             s.mylayoutbox,
-            spr_small,
+            --spr_small,
             s.mypromptbox,
         },
         nil, -- Middle widgets
