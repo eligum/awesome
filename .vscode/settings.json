@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.lua.template": "lua",
+        "*.lua.bk": "lua"
+    }
+}
