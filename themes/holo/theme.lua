@@ -204,12 +204,13 @@ end)))
 -- Battery
 local bat = lain.widget.bat({
     settings = function()
-        bat_header = " Bat "
-        bat_p      = bat_now.perc .. " "
+        bat_p      = bat_now.perc .. " % " .. space4
+        bat_header = space4 .. "🔋"
         if bat_now.ac_status == 1 then
-            bat_p = bat_p .. "Plugged "
+            bat_header = space4 .. "🔌" --
         end
-        widget:set_markup(markup.font(theme.font, markup(blue, bat_header) .. bat_p))
+        --widget:set_markup(markup.font(theme.font, markup(blue, bat_header) .. bat_p))
+        widget:set_markup(markup.font(theme.font, bat_header .. bat_p))
     end
 })
 --  ,  , ,  ,  , 
@@ -356,7 +357,7 @@ function theme.at_screen_connect(s)
             bat.widget,
             --spr_very_small,
             --volumewidget,
-            spr_left,
+            --spr_left,
         },
     }
 
