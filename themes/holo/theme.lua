@@ -304,7 +304,7 @@ function theme.at_screen_connect(s)
     awful.tag(awful.util.tagnames, s, awful.layout.layouts)
 
     -- Create a promptbox for each screen
-    s.mypromptbox = awful.widget.prompt()
+    --s.mypromptbox = awful.widget.prompt()
     -- Create an imagebox widget which will contains an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
     s.mylayoutbox = awful.widget.layoutbox(s)
@@ -336,7 +336,7 @@ function theme.at_screen_connect(s)
             -- spr_small,
             s.mylayoutbox,
             --spr_small,
-            s.mypromptbox,
+            --s.mypromptbox,
         },
         nil, -- Middle widgets
         { -- Right widgets
